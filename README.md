@@ -2,6 +2,12 @@
 
 A Chrome extension to block distracting websites and help you stay focused on studying.
 
+## 🖥️ Demo
+
+https://private-user-images.githubusercontent.com/64317447/532980148-d263d907-9933-4a0b-9fb1-1653000a9a66.mp4?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3Njc4MTA2MzIsIm5iZiI6MTc2NzgxMDMzMiwicGF0aCI6Ii82NDMxNzQ0Ny81MzI5ODAxNDgtZDI2M2Q5MDctOTkzMy00YTBiLTlmYjEtMTY1MzAwMGE5YTY2Lm1wND9YLUFtei1BbGdvcml0aG09QVdTNC1ITUFDLVNIQTI1NiZYLUFtei1DcmVkZW50aWFsPUFLSUFWQ09EWUxTQTUzUFFLNFpBJTJGMjAyNjAxMDclMkZ1cy1lYXN0LTElMkZzMyUyRmF3czRfcmVxdWVzdCZYLUFtei1EYXRlPTIwMjYwMTA3VDE4MjUzMlomWC1BbXotRXhwaXJlcz0zMDAmWC1BbXotU2lnbmF0dXJlPTFlZTA1ZGY5MmZiMTVmMmFlZGUzZjNjYWI2Y2UzM2Y0MzdkNTMzZjRiMTUzOTNjYzU0NjliMDJiNTU1Mzc2MTgmWC1BbXotU2lnbmVkSGVhZGVycz1ob3N0In0.lcuVxRwoZAkOfoTubMfmtcC_FbuhNDJuy1itGionfGg
+
+> Click to play and see SiteBlock in action: blocking/unblocking sites, toggling focus, and using the fun blocked page—all in real time.
+
 ## Features
 
 - **Block websites** - Add any website to your block list

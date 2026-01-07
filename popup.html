@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SiteBlock</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <span class="logo-icon">🛡️</span>
+        <h1>SiteBlock</h1>
+      </div>
+      <div class="toggle-container">
+        <label class="toggle">
+          <input type="checkbox" id="enableToggle">
+          <span class="slider"></span>
+        </label>
+        <span class="toggle-label" id="toggleLabel">ON</span>
+      </div>
+    </header>
+
+    <section class="current-site">
+      <div class="site-info">
+        <span class="site-icon">🌐</span>
+        <span class="site-name" id="currentSite">Loading...</span>
+      </div>
+      <button class="btn-action" id="toggleSiteBtn">
+        <span class="btn-icon" id="btnIcon">➕</span>
+        <span class="btn-text" id="btnText">Block Site</span>
+      </button>
+    </section>
+
+    <section class="blocked-list">
+      <h2>
+        <span>Blocked Sites</span>
+        <span class="count" id="siteCount">0</span>
+      </h2>
+      <div class="sites-container" id="sitesContainer">
+        <div class="empty-state" id="emptyState">
+          <span class="empty-icon">✨</span>
+          <p>No sites blocked yet</p>
+          <p class="empty-sub">Add sites to stay focused!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="add-manual">
+      <div class="input-group">
+        <input type="text" id="manualInput" placeholder="Enter domain (e.g. twitter.com)">
+        <button class="btn-add" id="manualAddBtn">Add</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Generate SiteBlock Icons</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #1a1a2e;
+      color: white;
+    }
+    h1 { color: #4ecdc4; }
+    .icons { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px 0; }
+    .icon-box { text-align: center; }
+    canvas { border: 1px solid #333; border-radius: 8px; }
+    button {
+      padding: 10px 20px;
+      background: #4ecdc4;
+      border: none;
+      border-radius: 8px;
+      color: #1a1a2e;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover { background: #45b7aa; }
+    p { color: #a0a0b8; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <h1>🛡️ SiteBlock Icon Generator</h1>
+  <p>Click the buttons below to download the icons, then place them in the <code>icons</code> folder.</p>
+  
+  <div class="icons">
+    <div class="icon-box">
+      <canvas id="icon16" width="16" height="16"></canvas>
+      <br><button onclick="download(16)">Download 16x16</button>
+    </div>
+    <div class="icon-box">
+      <canvas id="icon48" width="48" height="48"></canvas>
+      <br><button onclick="download(48)">Download 48x48</button>
+    </div>
+    <div class="icon-box">
+      <canvas id="icon128" width="128" height="128"></canvas>
+      <br><button onclick="download(128)">Download 128x128</button>
+    </div>
+  </div>
+
+  <button onclick="downloadAll()">Download All Icons</button>
+
+  <script>
+    const sizes = [16, 48, 128];
+    
+    function drawIcon(size) {
+      const canvas = document.getElementById('icon' + size);
+      const ctx = canvas.getContext('2d');
+      
+      // Background
+      ctx.fillStyle = '#1a1a2e';
+      roundRect(ctx, 0, 0, size, size, size * 0.18);
+      ctx.fill();
+      
+      // Gradient circle
+      const gradient = ctx.createLinearGradient(0, 0, size, size);
+      gradient.addColorStop(0, '#ff6b6b');
+      gradient.addColorStop(1, '#ff4757');
+      
+      ctx.fillStyle = gradient;
+      ctx.beginPath();
+      ctx.arc(size/2, size/2, size * 0.32, 0, Math.PI * 2);
+      ctx.fill();
+      
+      // Shield/Block icon
+      ctx.strokeStyle = 'white';
+      ctx.lineWidth = Math.max(1, size * 0.06);
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+      
+      // Draw a simple block/stop symbol
+      const cx = size / 2;
+      const cy = size / 2;
+      const r = size * 0.2;
+      
+      ctx.beginPath();
+      ctx.moveTo(cx - r, cy - r);
+      ctx.lineTo(cx + r, cy + r);
+      ctx.stroke();
+      
+      ctx.beginPath();
+      ctx.moveTo(cx + r, cy - r);
+      ctx.lineTo(cx - r, cy + r);
+      ctx.stroke();
+    }
+    
+    function roundRect(ctx, x, y, w, h, r) {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.lineTo(x + w - r, y);
+      ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+      ctx.lineTo(x + w, y + h - r);
+      ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+      ctx.lineTo(x + r, y + h);
+      ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+      ctx.lineTo(x, y + r);
+      ctx.quadraticCurveTo(x, y, x + r, y);
+      ctx.closePath();
+    }
+    
+    function download(size) {
+      const canvas = document.getElementById('icon' + size);
+      const link = document.createElement('a');
+      link.download = 'icon' + size + '.png';
+      link.href = canvas.toDataURL('image/png');
+      link.click();
+    }
+    
+    function downloadAll() {
+      sizes.forEach((size, i) => {
+        setTimeout(() => download(size), i * 200);
+      });
+    }
+    
+    // Draw all icons on load
+    sizes.forEach(drawIcon);
+  </script>
+</body>
+</html>
+

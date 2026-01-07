@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Blocked - Go Study!</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: "Space Grotesk", system-ui, sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0f0f1a 0%,
+          #1a1a2e 50%,
+          #16213e 100%
+        );
+        color: #ffffff;
+        overflow: hidden;
+        position: relative;
+      }
+
+      /* Animated background particles */
+      .particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+      }
+
+      .particle {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background: rgba(255, 107, 107, 0.1);
+        border-radius: 50%;
+        animation: float 15s infinite;
+      }
+
+      .particle:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+        width: 20px;
+        height: 20px;
+      }
+      .particle:nth-child(2) {
+        left: 20%;
+        animation-delay: 2s;
+        width: 15px;
+        height: 15px;
+      }
+      .particle:nth-child(3) {
+        left: 30%;
+        animation-delay: 4s;
+      }
+      .particle:nth-child(4) {
+        left: 40%;
+        animation-delay: 1s;
+        width: 25px;
+        height: 25px;
+      }
+      .particle:nth-child(5) {
+        left: 50%;
+        animation-delay: 3s;
+      }
+      .particle:nth-child(6) {
+        left: 60%;
+        animation-delay: 5s;
+        width: 18px;
+        height: 18px;
+      }
+      .particle:nth-child(7) {
+        left: 70%;
+        animation-delay: 2.5s;
+      }
+      .particle:nth-child(8) {
+        left: 80%;
+        animation-delay: 1.5s;
+        width: 22px;
+        height: 22px;
+      }
+      .particle:nth-child(9) {
+        left: 90%;
+        animation-delay: 4.5s;
+      }
+      .particle:nth-child(10) {
+        left: 15%;
+        animation-delay: 3.5s;
+        width: 12px;
+        height: 12px;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+
+      .container {
+        text-align: center;
+        z-index: 1;
+        padding: 40px;
+        animation: fadeInUp 0.8s ease;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .emoji {
+        font-size: 180px;
+        margin-bottom: 30px;
+        display: block;
+        animation: bounce 2s ease-in-out infinite,
+          wiggle 3s ease-in-out infinite;
+        filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+      }
+
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      @keyframes wiggle {
+        0%,
+        100% {
+          transform: rotate(-3deg);
+        }
+        50% {
+          transform: rotate(3deg);
+        }
+      }
+
+      .message {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #ff6b6b, #feca57, #4ecdc4);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-shadow: none;
+        animation: glow 2s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          filter: drop-shadow(0 0 20px rgba(255, 107, 107, 0.5));
+        }
+        to {
+          filter: drop-shadow(0 0 40px rgba(78, 205, 196, 0.5));
+        }
+      }
+
+      .sub-message {
+        font-size: 20px;
+        color: #a0a0b8;
+        margin-bottom: 40px;
+        animation: fadeIn 1s ease 0.3s both;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .blocked-site {
+        display: inline-block;
+        padding: 12px 24px;
+        background: rgba(255, 107, 107, 0.1);
+        border: 1px solid rgba(255, 107, 107, 0.3);
+        border-radius: 30px;
+        color: #ff6b6b;
+        font-size: 16px;
+        margin-bottom: 40px;
+        animation: fadeIn 1s ease 0.5s both;
+      }
+
+      .blocked-site::before {
+        content: "🚫 ";
+      }
+
+      .btn-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, #4ecdc4, #45b7aa);
+        border: none;
+        border-radius: 50px;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        animation: fadeIn 1s ease 0.7s both;
+        font-family: inherit;
+      }
+
+      .btn-back:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(78, 205, 196, 0.4);
+      }
+
+      .btn-back:active {
+        transform: translateY(-1px);
+      }
+
+      .motivational-quote {
+        position: absolute;
+        bottom: 40px;
+        font-size: 14px;
+        color: #6b6b80;
+        font-style: italic;
+        animation: fadeIn 1s ease 1s both;
+      }
+
+      .motivational-quote::before {
+        content: '"';
+      }
+
+      .motivational-quote::after {
+        content: '"';
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .emoji {
+          font-size: 120px;
+        }
+        .message {
+          font-size: 32px;
+        }
+        .sub-message {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+
+    <div class="container">
+      <span class="emoji" id="emoji">📚</span>
+      <h1 class="message">Go back to studying!</h1>
+      <p class="sub-message">This site is blocked to help you stay focused.</p>
+      <div class="blocked-site" id="blockedSite">Loading...</div>
+      <br /><br />
+      <button class="btn-back" id="backBtn">
+        <span>📖</span> Back to Work
+      </button>
+    </div>
+
+    <p class="motivational-quote" id="quote">
+      The secret of getting ahead is getting started.
+    </p>
+
+    <script src="blocked.js"></script>
+  </body>
+</html>

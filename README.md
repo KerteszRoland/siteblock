@@ -13,11 +13,13 @@ A Chrome extension to block distracting websites and help you stay focused on st
 ## Installation
 
 ### 1. Generate Icons
+
 1. Open `generate-icons.html` in your browser
-2. Click "Download All Icons" 
+2. Click "Download All Icons"
 3. Move the downloaded icons to the `icons` folder
 
 ### 2. Load Extension in Chrome
+
 1. Open Chrome and go to `chrome://extensions/`
 2. Enable **Developer mode** (toggle in top right)
 3. Click **Load unpacked**
@@ -26,15 +28,18 @@ A Chrome extension to block distracting websites and help you stay focused on st
 ## Usage
 
 ### Adding Sites to Block
+
 - **Current site**: Click the extension icon, then click "Block Site"
 - **Manual entry**: Type a domain in the input field and click "Add"
 
 ### Managing Blocked Sites
+
 - View all blocked sites in the extension popup
 - See attempt counts for each site
 - Click the trash icon to remove a site from the block list
 
 ### Enable/Disable Blocking
+
 - Use the toggle switch in the header to turn blocking on/off
 - When disabled, you can access all sites normally
 
@@ -72,3 +77,4 @@ siteblock/
 
 Made with ❤️ to help you study better!
 
+Vibe coded by Opus 4.5
